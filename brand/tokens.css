@@ -1,0 +1,61 @@
+/* plasmid / brand tokens - draft 0, 2026-10-30
+ *
+ * Source of truth: dnangelus.ar (assets/dna.css + index.html :root).
+ * Plasmid extends the DNAngeluS design system. It does not fork it.
+ * The values below are a copy for docs and offline use; if they ever
+ * disagree with dnangelus.ar, dnangelus.ar wins.
+ *
+ * Fonts (Google Fonts): JetBrains Mono 400/500/700, Space Grotesk 400/500/700
+ */
+
+:root {
+  /* --- inherited from DNAngeluS, unchanged --- */
+  --bg: #07080d;
+  --surface: #0d1018;
+  --surface-2: #141826;
+  --border: #232a3d;
+  --border-strong: #5a6690;
+  --ink: #e6ecff;
+  --ink-muted: #8b95b8;
+  --cyan: #22e5ff;
+  --cyan-dim: #1596ab;
+  --magenta: #ff2bd6;
+  --magenta-dim: #b01c95;
+  --on-cyan: #05060a;
+  --on-magenta: #05060a;
+  --success: #5cffb0;
+  --warning: #ffc247;
+  --danger: #ff5470;
+  --glow-cyan: 0 0 24px 0 #22e5ff59;
+  --glow-magenta: 0 0 24px 0 #ff2bd659;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-10: 40px;
+  --space-16: 64px;
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+
+  /* --- plasmid semantic aliases (the only additions) --- */
+  --host: var(--cyan);            /* what already exists: the engine, the ring, static emphasis */
+  --host-dim: var(--cyan-dim);
+  --insert: var(--magenta);       /* what is being spliced in: hover, focus, active, selected */
+  --insert-dim: var(--magenta-dim);
+}
+
+/* Light surfaces (GitHub light mode, print). DNAngeluS itself is dark-only;
+ * this block is a Plasmid extension. Bright cyan and magenta fail contrast on
+ * white (1.53:1 and 3.20:1), so the host goes to ink and the insert to magenta-dim. */
+[data-theme="light"] {
+  --bg: #ffffff;
+  --surface: #f6f8fa;
+  --ink: #05060a;
+  --ink-muted: #57606a;
+  --host: #05060a;
+  --insert: #b01c95;
+}
